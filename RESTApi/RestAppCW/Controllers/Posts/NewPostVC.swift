@@ -20,7 +20,7 @@ class NewPostVC: UIViewController {
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             
-=            let postBodyJSON: [String: Any] = [
+            let postBodyJSON: [String: Any] = [
                 "userId": userId,
                 "title": title,
                 "body": body
@@ -61,6 +61,7 @@ class NewPostVC: UIViewController {
             
             AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
                 .response { [weak self] response in
+                    /// тут мы уже в главном потоке
                     debugPrint(response)
                     print(response.request)
                     print(response.response)
