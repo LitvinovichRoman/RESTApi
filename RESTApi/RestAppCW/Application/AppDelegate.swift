@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  RESTApi
-//
-//  Created by Roman Litvinovich on 16/10/2023.
-//
-
 import UIKit
 
 @main
