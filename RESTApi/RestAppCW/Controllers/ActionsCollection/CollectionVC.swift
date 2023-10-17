@@ -6,6 +6,7 @@ enum UserActions: String, CaseIterable {
 }
 
 class CollectionVC: UICollectionViewController {
+
     
     private let reuseIdentifier = "Cell"
     private let userActions = UserActions.allCases
@@ -19,7 +20,10 @@ class CollectionVC: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ActionCVCell
         let userAction = userActions[indexPath.row].rawValue
+        
         cell.infiLbl.text = userAction
+        cell.roundElementIntHeight()
+        
         return cell
     }
 

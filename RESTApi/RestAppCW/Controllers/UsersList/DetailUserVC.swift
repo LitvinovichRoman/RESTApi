@@ -17,7 +17,15 @@ class DetailUserVC: UIViewController {
         setDetail(user: user)
     }
     
+    
     @IBAction func openMapsButtonTapped(_ sender: UIButton) { openMapsForUserLocation() }
+    
+    @IBAction func editBtnAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "EditUserVC") as! EditUserVC
+        vc.user = user
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     @IBAction func openPostFlow() {
         let storyboard = UIStoryboard(name: "PostFlow", bundle: nil)
