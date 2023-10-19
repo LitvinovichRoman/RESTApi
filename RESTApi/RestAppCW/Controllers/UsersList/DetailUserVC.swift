@@ -9,14 +9,14 @@ class DetailUserVC: UIViewController {
     @IBOutlet private weak var phoneLbl: UILabel!
     @IBOutlet private weak var websiteLbl: UILabel!
     @IBOutlet private weak var adressLbl: UILabel!
-    
+   
     var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setDetail(user: user)
     }
-    
+        
     
     @IBAction func openMapsButtonTapped(_ sender: UIButton) { openMapsForUserLocation() }
     
@@ -34,9 +34,16 @@ class DetailUserVC: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func toDoBtnAction(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "ToDo", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "ToDoTVC") as! ToDoTVC
+        vc.user = user
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func openAlbomFlow() {
-        let storyboard = UIStoryboard(name: "AlbomsAndPhotosFlow", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "AlbomsTVC") as! AlbomsTVC
+        let storyboard = UIStoryboard(name: "AlbumsAndPhotos", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "AlbumsTVC") as! AlbumsTVC
         vc.user = user
         navigationController?.pushViewController(vc, animated: true)
     }

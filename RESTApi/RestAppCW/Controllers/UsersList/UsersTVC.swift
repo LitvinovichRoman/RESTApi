@@ -56,7 +56,7 @@ class UsersTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let userId = users[indexPath.row].id
-            UserNetworkService.deletePost(userId: userId) { [weak self] in
+            UserNetworkService.deleteUser(userId: userId) { [weak self] in
                 self?.users.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }

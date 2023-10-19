@@ -8,10 +8,10 @@ class NewPostVC: UIViewController {
     @IBOutlet weak var bodyTV: UITextView!
     
     var user: User?
-    
+
     @IBAction func postURLSession() {
         if let userId = user?.id,
-           let title = titleTF.text,
+        let title = titleTF.text,
            let body = bodyTV.text,
            let url = ApiConstants.postsURL {
             
@@ -61,7 +61,7 @@ class NewPostVC: UIViewController {
             
             AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
                 .response { [weak self] response in
-
+                    /// тут мы уже в главном потоке
                     debugPrint(response)
                     print(response.request)
                     print(response.response)
