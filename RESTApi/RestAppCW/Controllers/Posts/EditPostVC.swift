@@ -1,51 +1,40 @@
-
 import UIKit
-import Alamofire
 import SwiftyJSON
+import Alamofire
 
 class EditPostVC: UIViewController {
     
     @IBOutlet weak var titleTF: UITextField!
-    @IBOutlet weak var bodyTV: UITextView!
-    
-    var user: User?
+    @IBOutlet weak var contentTV: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bodyTV.roundElement()
+        contentTV.roundElement()
     }
+    var post: Post?
     
-    @IBAction func post() {
-        if let userId = user?.id,
-           let title = titleTF.text,
-           let body = bodyTV.text,
-           let url = ApiConstants.postsURL {
+    @IBAction func doneBtnAction(_ sender: UIButton) {
+        if let postId = post?.id,
+           let titleTF = titleTF.text,
+           let contentTV = contentTV.text,
+           
+            let url = ApiConstants.postsURL {
             
             let parameters: Parameters = [
-                "userId": userId,
-                "title": title,
-                "body": body
+                "title": titleTF,
+                "body": contentTV,
             ]
             
-            AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            AF.request("\(url)/\(postId)", method: .patch, parameters: parameters, encoding: JSONEncoding.default)
                 .response { [weak self] response in
-
-                    debugPrint(response)
-                    print(response.request)
-                    print(response.response)
-                    debugPrint(response.result)
-                    
                     switch response.result {
-                    case .success(let data):
-                        print(data)
-                        print(JSON(data))
+                    case .success:
                         self?.navigationController?.popViewController(animated: true)
                     case .failure(let error):
                         print(error)
-                        
                     }
                 }
         }
     }
-
 }
+

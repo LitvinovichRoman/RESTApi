@@ -17,12 +17,16 @@ struct ApiConstants {
     static let postsPath = serverPath + "posts"
     static let postsURL = URL(string: postsPath)
     
-    // Albums
-    static let albumsPath = serverPath + "alboms"
-    static let albumsURL = URL(string: albumsPath)
+    // Alboms
+    static let albomsPath = serverPath + "albums"
+    static let albomsURL = URL(string: albomsPath)
     
     // ToDo
     static let todosPath = serverPath + "todos"
     static let todosURL = URL(string: todosPath)
-    
+   
+    // Comments
+    static let commentsPath = serverPath + "comments"
+    static let commentsURL = URL(string: commentsPath)
 }
+

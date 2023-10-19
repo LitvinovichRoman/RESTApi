@@ -319,6 +319,9 @@
                                                                 <rect key="frame" x="283.33333333333331" y="0.0" width="96.666666666666686" height="34.333333333333336"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="gray" title="ToDo-s" cornerStyle="capsule"/>
+                                                                <connections>
+                                                                    <action selector="toDoBtnAction:" destination="B6J-Nl-z1g" eventType="touchUpInside" id="dNw-Mn-rvy"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
