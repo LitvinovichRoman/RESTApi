@@ -9,14 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--CollectionVC-->
+        <!--CollectionCVC-->
         <scene sceneID="23p-Qj-cfi">
             <objects>
-                <collectionViewController id="89I-dH-uez" customClass="CollectionVC" customModule="RestAppCW" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="89I-dH-uez" customClass="CollectionCVC" customModule="RestAppCW" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="J1z-uv-bDI">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cAe-st-PSY">
                             <size key="itemSize" width="325" height="147"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -533,7 +533,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaulImage" translatesAutoresizingMaskIntoConstraints="NO" id="DOa-aI-cvS">
-                                <rect key="frame" x="0.0" y="103" width="430" height="795"/>
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="fPk-P4-VZH">
                                 <rect key="frame" x="178" y="203" width="74" height="37"/>
@@ -543,12 +543,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DuU-qt-PbJ" firstAttribute="trailing" secondItem="fPk-P4-VZH" secondAttribute="trailing" constant="178" id="7Uh-HZ-xuo"/>
-                            <constraint firstItem="DOa-aI-cvS" firstAttribute="top" secondItem="DuU-qt-PbJ" secondAttribute="top" id="ETj-Cv-y8a"/>
+                            <constraint firstItem="DOa-aI-cvS" firstAttribute="top" secondItem="A1e-ZQ-OAb" secondAttribute="top" id="ETj-Cv-y8a"/>
                             <constraint firstItem="fPk-P4-VZH" firstAttribute="top" secondItem="DuU-qt-PbJ" secondAttribute="top" constant="100" id="Hfl-p8-p6o"/>
                             <constraint firstItem="fPk-P4-VZH" firstAttribute="leading" secondItem="DuU-qt-PbJ" secondAttribute="leading" constant="178" id="VuU-ex-MkU"/>
                             <constraint firstItem="DOa-aI-cvS" firstAttribute="leading" secondItem="DuU-qt-PbJ" secondAttribute="leading" id="jBX-1e-l4W"/>
                             <constraint firstItem="DuU-qt-PbJ" firstAttribute="trailing" secondItem="DOa-aI-cvS" secondAttribute="trailing" id="rfj-0I-aVy"/>
-                            <constraint firstItem="DuU-qt-PbJ" firstAttribute="bottom" secondItem="DOa-aI-cvS" secondAttribute="bottom" id="wf5-d0-Y1Q"/>
+                            <constraint firstAttribute="bottom" secondItem="DOa-aI-cvS" secondAttribute="bottom" id="wf5-d0-Y1Q"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dde-b3-kbJ"/>
@@ -559,7 +559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DHc-pZ-3vA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="941" y="-499"/>
+            <point key="canvasLocation" x="940.46511627906978" y="-499.57081545064381"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aCs-6l-ErQ">
@@ -732,6 +732,7 @@
             <point key="canvasLocation" x="2923" y="686"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="defaulImage" width="601" height="476"/>
         <systemColor name="labelColor">

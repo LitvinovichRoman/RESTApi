@@ -15,12 +15,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6a42b5c6e025498d708a0010cae6d50c" translatesAutoresizingMaskIntoConstraints="NO" id="0dJ-cc-Rki">
-                                <rect key="frame" x="59" y="311" width="275" height="255"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pngwing.com (2)" translatesAutoresizingMaskIntoConstraints="NO" id="0dJ-cc-Rki">
+                                <rect key="frame" x="46.666666666666657" y="288.66666666666669" width="300" height="300.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="fOR-B3-iCh"/>
+                                    <constraint firstAttribute="height" constant="300" id="mds-6a-oZD"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0dJ-cc-Rki" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6Zi-iG-fvB"/>
                             <constraint firstItem="0dJ-cc-Rki" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="d2g-dp-zhp"/>
@@ -33,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="6a42b5c6e025498d708a0010cae6d50c" width="275" height="255"/>
+        <image name="pngwing.com (2)" width="886" height="886"/>
     </resources>
 </document>
