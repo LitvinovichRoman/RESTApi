@@ -48,7 +48,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Posts" id="iF3-Cv-RXZ">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="w3g-lq-y9a">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="w3g-lq-y9a">
                             <connections>
                                 <action selector="addPostAction:" destination="NKO-Fl-NYU" id="VZl-ag-lrC"/>
                             </connections>
@@ -60,7 +60,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9oQ-J8-T0M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-217.55725190839695" y="28.87323943661972"/>
+            <point key="canvasLocation" x="-295" y="-361"/>
         </scene>
         <!--New PostVC-->
         <scene sceneID="QIs-dh-Pff">
@@ -144,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wW5-wF-wKu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="585.49618320610682" y="-360.56338028169017"/>
+            <point key="canvasLocation" x="546" y="-361"/>
         </scene>
         <!--Post DetailVC-->
         <scene sceneID="4hw-KY-RMm">
@@ -254,13 +254,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="OWa-A4-BLV"/>
                     <connections>
-                        <outlet property="surNamePost" destination="jiR-XH-BzL" id="Itv-o4-4gc"/>
-                        <outlet property="title" destination="QAA-zS-ytx" id="jx6-k7-zUd"/>
+                        <outlet property="contentBody" destination="jiR-XH-BzL" id="C2j-39-eLl"/>
+                        <outlet property="postTitle" destination="QAA-zS-ytx" id="XUp-ii-Qxz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qIc-Tq-vOC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="585" y="423"/>
+            <point key="canvasLocation" x="1326" y="-361"/>
         </scene>
         <!--Edit PostVC-->
         <scene sceneID="oBB-5P-BWC">
@@ -345,7 +345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K4G-Ex-GvQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1409.9236641221373" y="422.53521126760563"/>
+            <point key="canvasLocation" x="2095" y="-361"/>
         </scene>
     </scenes>
     <resources>

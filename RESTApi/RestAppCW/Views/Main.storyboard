@@ -116,7 +116,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="LUk-so-7S3">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="I4f-A3-NKt">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="I4f-A3-NKt">
                             <connections>
                                 <action selector="addBtnAction:" destination="95f-4g-HBC" id="6qf-mK-uQl"/>
                             </connections>
@@ -522,7 +522,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIF-1E-wSR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2258" y="606"/>
+            <point key="canvasLocation" x="2259" y="498"/>
         </scene>
         <!--ImageVC-->
         <scene sceneID="QGg-Re-ljM">
@@ -729,7 +729,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kHb-v9-sSy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2929" y="606"/>
+            <point key="canvasLocation" x="2923" y="686"/>
         </scene>
     </scenes>
     <resources>

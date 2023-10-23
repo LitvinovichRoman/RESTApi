@@ -3,7 +3,6 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +10,7 @@
         <!--AlbumsTVC-->
         <scene sceneID="3NO-rw-6b6">
             <objects>
-                <tableViewController storyboardIdentifier="AlbumsTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bax-aU-Bjl" customClass="AlbumsTVC" customModule="Rest_App" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AlbumsTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bax-aU-Bjl" customClass="AlbumsTVC" customModule="RestAppCW" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="oAi-cg-tvF">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,9 +32,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="JDH-Gg-6Ai" kind="show" identifier="showPhotos" id="aeb-W8-5Bp"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -43,6 +39,9 @@
                             <outlet property="delegate" destination="bax-aU-Bjl" id="OCR-ie-85o"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="JDH-Gg-6Ai" kind="show" identifier="showPhotos" id="Rwf-Ds-LCW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Vx-vY-DIs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,7 +50,7 @@
         <!--PhotosCVC-->
         <scene sceneID="OvW-Qo-GJu">
             <objects>
-                <collectionViewController storyboardIdentifier="PhotosCVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JDH-Gg-6Ai" customClass="PhotosCVC" customModule="Rest_App" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="PhotosCVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JDH-Gg-6Ai" customClass="PhotosCVC" customModule="RestAppCW" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="9iN-kw-gsi">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,40 +73,8 @@
             </objects>
             <point key="canvasLocation" x="424" y="8"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="3AS-FJ-NfQ">
-            <objects>
-                <viewController id="v0Q-81-qYW" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hTp-In-X2E">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="O6R-yE-qhL">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                            </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="zpt-c6-dT2">
-                                <rect key="frame" x="178" y="420" width="37" height="37"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="RhJ-RP-Gx5"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="RhJ-RP-Gx5" firstAttribute="bottom" secondItem="O6R-yE-qhL" secondAttribute="bottom" id="2i1-FH-rwe"/>
-                            <constraint firstItem="O6R-yE-qhL" firstAttribute="leading" secondItem="RhJ-RP-Gx5" secondAttribute="leading" id="6hz-zl-X0F"/>
-                            <constraint firstItem="O6R-yE-qhL" firstAttribute="top" secondItem="RhJ-RP-Gx5" secondAttribute="top" id="CAd-2N-3eT"/>
-                            <constraint firstItem="zpt-c6-dT2" firstAttribute="centerY" secondItem="O6R-yE-qhL" secondAttribute="centerY" id="NQW-rQ-tLs"/>
-                            <constraint firstItem="RhJ-RP-Gx5" firstAttribute="trailing" secondItem="O6R-yE-qhL" secondAttribute="trailing" id="Z4X-dr-A5q"/>
-                            <constraint firstItem="zpt-c6-dT2" firstAttribute="centerX" secondItem="O6R-yE-qhL" secondAttribute="centerX" id="spX-xB-k3u"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CEQ-4l-z87" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1222" y="8"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="defaultImage" width="880" height="697"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

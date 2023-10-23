@@ -1,16 +1,19 @@
 import UIKit
 
-class PhotosCVC: UICollectionViewController {
-    
-    var album: Albom?
+final class PhotosCVC: UICollectionViewController {
+
+    var albom: Albom?
     var photos: [Photo]?
-    
+    var user: User?
+
+    @IBOutlet var collectionViewCell: UICollectionView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(UINib(nibName: "PhotoCVCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
         fetchPhotos()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let layout = UICollectionViewFlowLayout()
@@ -20,19 +23,22 @@ class PhotosCVC: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        photos?.count ?? 0
+        return photos?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let photo = photos?[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PhotoCVCell
         cell.thumbnailUrl = photo?.thumbnailUrl
+
+        addContextMenu(to: cell) // Добавление выпадающего списка к ячейке
+
         return cell
     }
-    
+
     private func fetchPhotos() {
-        guard let album = album else { return  }
-        PhotoNetworkService.getPhotos(albomID: album.id) { [weak self] photos, error in
+        guard albom != nil else { return  }
+        NetworkService.getPhotos(albomID: user?.id ?? 0) { [weak self] photos, error in
             if let error = error {
                 print(error)
             } else if let photos = photos {
@@ -42,4 +48,25 @@ class PhotosCVC: UICollectionViewController {
         }
     }
 
+    func deleteThumbnail(at indexPath: IndexPath) {
+        guard let photo = photos?[indexPath.row] else {
+            return
+        }
+
+        NetworkService.deletePhoto(photoID: photo.id) { [weak self] result, error in
+            if let error = error {
+                print(error)
+            } else {
+                self?.photos?.remove(at: indexPath.row)
+                self?.collectionView.deleteItems(at: [indexPath])
+            }
+        }
+    }
+
+    func addContextMenu(to cell: UICollectionViewCell) {
+        let interaction = UIContextMenuInteraction(delegate: self)
+        cell.addInteraction(interaction)
+    }
+
 }
+
