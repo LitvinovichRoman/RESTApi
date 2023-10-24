@@ -67,6 +67,13 @@ final class PhotosCVC: UICollectionViewController {
         let interaction = UIContextMenuInteraction(delegate: self)
         cell.addInteraction(interaction)
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            let photo = photos?[indexPath.row]
+            let vc = PhotoVC()
+            vc.photo = photo
+            self.present(vc, animated: true)
+        }
 
 }
 
