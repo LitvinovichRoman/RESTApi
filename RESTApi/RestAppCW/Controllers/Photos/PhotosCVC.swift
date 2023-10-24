@@ -30,7 +30,9 @@ final class PhotosCVC: UICollectionViewController {
         let photo = photos?[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PhotoCVCell
         cell.thumbnailUrl = photo?.thumbnailUrl
+
         addContextMenu(to: cell) // Добавление выпадающего списка к ячейке
+
         return cell
     }
 
@@ -50,6 +52,7 @@ final class PhotosCVC: UICollectionViewController {
         guard let photo = photos?[indexPath.row] else {
             return
         }
+
         NetworkService.deletePhoto(photoID: photo.id) { [weak self] result, error in
             if let error = error {
                 print(error)
@@ -64,13 +67,6 @@ final class PhotosCVC: UICollectionViewController {
         let interaction = UIContextMenuInteraction(delegate: self)
         cell.addInteraction(interaction)
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let photo = photos?[indexPath.row]
-        let vc = PhotoVC()
-        vc.photo = photo
-        self.present(vc, animated: true)
-    }
-    
+
 }
 
