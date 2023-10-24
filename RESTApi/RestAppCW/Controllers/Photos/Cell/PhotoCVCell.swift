@@ -15,7 +15,7 @@ class PhotoCVCell: UICollectionViewCell {
     
     private func getThumbnail() {
         guard let thumbnailUrl = thumbnailUrl else { return }
-        ThumbnailNetworkService.getThumbnail(thumbnailURL: thumbnailUrl) { [weak self] image, error in
+        NetworkService.getThumbnail(thumbnailURL: thumbnailUrl) { [weak self] image, error in
             self?.activityIndicatorView.stopAnimating()
             self?.imageView.image = image
         }
